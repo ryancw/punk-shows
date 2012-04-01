@@ -1,7 +1,13 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  	<%= f.text_area :acts, placeholder: "Acts.. (seperate with comma)" %>
+  </div>
+  <div class="field">
+  	<%= f.text_area :location, placeholder: "Location.. yeah" %>
+  </div>
+  <div class="field">
+  	<%= f.date_select :date %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>

@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-@import "bootstrap";
-
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -19,7 +17,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 section {
@@ -60,6 +58,15 @@ h2 {
   color: #999;
 }
 
+h5 {
+  font-size: 1em;
+  text-align: left;
+  font-weight: normal;
+  color: 000;
+
+
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -74,7 +81,7 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 1px;
   font-weight: bold;
   line-height: 1;
 }
@@ -219,6 +226,11 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+.delete {
+  color: $grayLight;
+  text-align: center;
 }
 
 /* sidebar */

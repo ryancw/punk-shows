@@ -11,13 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327234851) do
+ActiveRecord::Schema.define(:version => 20120401174334) do
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.date     "date"
+    t.string   "location"
+    t.string   "acts"
+    t.text     "details"
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
@@ -32,6 +36,27 @@ ActiveRecord::Schema.define(:version => 20120327234851) do
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
+
+  create_table "rshows", :force => true do |t|
+    t.date     "date"
+    t.string   "location"
+    t.string   "acts"
+    t.text     "details"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "rshows", ["user_id", "date"], :name => "index_rshows_on_user_id_and_date"
+
+  create_table "shows", :force => true do |t|
+    t.date     "date"
+    t.string   "location"
+    t.string   "acts"
+    t.string   "details"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -1,14 +1,22 @@
 class Micropost < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :content, :date, :location, :acts, :details
   belongs_to :user
 
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :location, presence: true, length: { maximum: 140 }
+  validates :date, presence: true
+  validates :acts, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
 
- default_scope :order => 'microposts.created_at DESC'
+ default_scope :order => 'microposts.date ASC'
 
+
+def feed
+  Micropost.where(!past?(Micropost.date))
+end
   # Returns microposts from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
+
+
 
   private
 
