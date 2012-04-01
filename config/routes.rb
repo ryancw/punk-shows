@@ -5,7 +5,7 @@ Punkshows::Application.routes.draw do
     end
   end
   resources :sessions,      only: [:new, :create, :destroy]
-  resources :microposts,    only: [:create, :destroy]
+  resources :microposts,    only: [:create, :destroy, :show, :edit, :update]
   resources :relationships, only: [:create, :destroy]
 
   root to: 'static_pages#home'
@@ -17,6 +17,8 @@ Punkshows::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+  match '/newshow', to: 'microposts#new'
+
   get "static_pages/home"
   get "static_pages/about"
   get "static_pages/help"

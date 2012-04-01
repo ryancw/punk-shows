@@ -1,0 +1,15 @@
+<% provide(:title, @micropost.acts) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @micropost.acts %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span8">
+    <%= micropost.date %>
+     - <%= micropost.acts %> @ <%= micropost.location %>
+     <%= micropost.details
+  </div>
+</div>

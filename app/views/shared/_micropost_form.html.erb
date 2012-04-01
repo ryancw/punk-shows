@@ -1,13 +1,16 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-  	<%= f.text_area :acts, placeholder: "Acts.. (seperate with comma)" %>
+  	<%= f.text_area :acts, placeholder: "Bands (seperate with comma)" %>
   </div>
   <div class="field">
-  	<%= f.text_area :location, placeholder: "Location.. yeah" %>
+  	<%= f.text_field :location, placeholder: "Location" %>
   </div>
   <div class="field">
   	<%= f.date_select :date %>
+  </div>
+  <div class="field">
+  	<%= f.text_area :details, placeholder: "Details: address, directions, facebook, contact info" %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>

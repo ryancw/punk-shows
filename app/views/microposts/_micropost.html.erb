@@ -1,5 +1,6 @@
 <li>
-  <span class="content"><%= micropost.content %></span>
+  <span class="content"><%= micropost.date %>
+     - <%= micropost.acts %> @ <%= micropost.location %></span>
   <span class="timestamp">
     created <%= time_ago_in_words(micropost.created_at) %> ago.
   </span>

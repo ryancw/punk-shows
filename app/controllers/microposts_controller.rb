@@ -1,7 +1,28 @@
 class MicropostsController < ApplicationController
-  before_filter :signed_in_user, only: [:create, :destroy]
-  before_filter :correct_user,   only: :destroy
+  before_filter :signed_in_user, only: [:create, :destroy, :edit]
+  before_filter :correct_user,   only: [:destroy, :edit]
 
+def new
+  @micropost = Micropost.new
+end
+
+def show
+    @micropost = Micropost.find(params[:id])
+  end
+
+def edit
+  @micropost = Micropost.find(params[:id])
+end
+
+def update
+    @micropost = Micropost.find(params[:id])
+    if @micropost.update_attributes(params[:micropost])
+      flash[:success] = "Show updated"
+      redirect_to @micropost
+    else
+      render 'edit'
+    end
+  end
 
   def create
     @micropost = current_user.microposts.build(params[:micropost])
@@ -25,4 +46,4 @@ class MicropostsController < ApplicationController
       @micropost = current_user.microposts.find_by_id(params[:id])
       redirect_to root_path if @micropost.nil?
     end
-end
+  end

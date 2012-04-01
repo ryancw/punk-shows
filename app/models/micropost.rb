@@ -9,10 +9,6 @@ class Micropost < ActiveRecord::Base
 
  default_scope :order => 'microposts.date ASC'
 
-
-def feed
-  Micropost.where(!past?(Micropost.date))
-end
   # Returns microposts from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
 

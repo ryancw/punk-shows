@@ -1,0 +1,23 @@
+<% provide(:title, "Edit show") %> 
+<h1>Update the show</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+  <%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+
+      <%= f.label :acts %>
+      <%= f.text_field :acts %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+
+      <%= f.label :details %>
+      <%= f.text_field :details %>
+
+      <%= f.submit "Save changes", :class => "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
