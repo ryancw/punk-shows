@@ -17,8 +17,8 @@ before_filter :admin_user,     only: :destroy
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "welcome"
-      redirect_to @user
+      flash[:success] = "welcome to the club. feel free to add shows!"
+      redirect_to root_path
     else
       render 'new'
     end

@@ -1,17 +1,7 @@
 <% provide(:title, 'Home') %>
 <% if signed_in? %>
   <div class="row">
-    <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%= render 'shared/stats' %>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
+    
     <div class="span8">
       <h3>UPCOMING SHOWS</h3>
       <%= render 'shared/feed' %>
@@ -22,15 +12,22 @@
     </div>
   </div>  
 <% else %>
-  <div class="row">
-    <h1>CONNECTICUT CONNECTICUT</h1>
-     <div class="span8">
-      <h3>UPCOMING SHOWS</h3>
-      <%= render 'shared/feed' %>
-    </div>
-    
-  </div>
+<ul class="nav nav-tabs">
+  <li><a href="#upcoming" data-toggle="tab">UPCOMING SHOWS</a></li>
+  <li><a href="#past" data-toggle="tab">PAST SHOWS</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="upcoming"><%= render 'shared/feed' %></div>
+  <div class="tab-pane" id="past"><%= render 'shared/past' %></div>
+</div>
+ 
+<script>
+$('#upcoming').tab('show')
+  $(function () {
+    $('.tabs a:last').tab('show')
+  })
+</script>  
 
-  
-  
+  </div>
 <% end %>

@@ -17,7 +17,7 @@ end
 def update
     @micropost = Micropost.find(params[:id])
     if @micropost.update_attributes(params[:micropost])
-      flash[:success] = "Show updated"
+      flash[:success] = "show updated"
       redirect_to @micropost
     else
       render 'edit'
@@ -27,7 +27,7 @@ def update
   def create
     @micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "show created! good job!"
       redirect_to root_path
     else
       @feed_items = []

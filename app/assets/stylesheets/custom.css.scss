@@ -1,8 +1,8 @@
-@import "bootstrap";
+ @import "bootstrap"; 
 
 /* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
+ $grayMediumLight: #eaeaea; 
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -46,7 +46,7 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
@@ -81,15 +81,17 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 1px;
+  padding-top: 10px;
   font-weight: bold;
   line-height: 1;
 }
 
+/*
 #logo:hover {
-  color: #333421;
+  color: #000000;
   text-decoration: none;
 }
+*/
 
 /* footer */
 
@@ -105,7 +107,7 @@ footer a {
 }  
 
 footer a:hover { 
-  color: #222;
+  color: #555;
 }
 
 footer small {
@@ -154,11 +156,6 @@ aside {
       margin-bottom: 3px;
     }
   }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
 }
 
 /* forms */
@@ -253,13 +250,5 @@ aside {
   }
   strong {
     display: block;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
   }
 }

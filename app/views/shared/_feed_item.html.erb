@@ -1,12 +1,16 @@
 <li id="<%= feed_item.id %>">
-    <span class="content"><%= feed_item.date %>
+    <span class="content">
+      <%= feed_item.date.month %>/<%= feed_item.date.day %>
      - <%= feed_item.acts %> @ <%= feed_item.location %>
-     <%= link_to "DEETS", feed_item %></span>
+     <%= link_to "details", feed_item %>
+     </span>
 
   <% if current_user?(feed_item.user) %>
+    <div class="span9 offset2">
     <%= link_to "delete", feed_item, method:  :delete,
                                      confirm: "You sure?",
                                      title:   feed_item.content %>
     <%= link_to "edit", edit_micropost_path(feed_item) %>
+  </div>
   <% end %>
 </li>
