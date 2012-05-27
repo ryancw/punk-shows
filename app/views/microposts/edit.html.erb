@@ -14,10 +14,10 @@
       <%= f.text_field :location %>
 
       <%= f.label :date %>
-      <%= f.date_select :date %>
+      <%= f.date_select :date, :size => "10x10" %>
 
       <%= f.label :details %>
-      <%= f.text_field :details %>
+      <%= f.text_area :details, :size => "5x10" %>
 
       <%= f.submit "save changes", :class => "btn btn-large btn-primary" %>
     <% end %>

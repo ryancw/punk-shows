@@ -6,12 +6,23 @@
         <%= @micropost.acts %>
       </h1>
     </section>
+    <section>
+      <% if current_user?(@micropost.user) %>
+        <%= link_to "edit", edit_micropost_path(@micropost) %>
+        //
+        <%= link_to "delete", @micropost, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   @micropost.content %>
+      <% end %>
+    </section>
   </aside>
   <div class="span8">
     <%= @micropost.date %>
      - <%= @micropost.acts %> @ <%= @micropost.location %>
      <br />
-     <%= @micropost.details %>
+     <div class="well">
+     <%= simple_format(@micropost.details) %>
+   </div>
 
   </div>
 </div>
