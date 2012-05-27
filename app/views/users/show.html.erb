@@ -6,14 +6,10 @@
         <%= @user.name %>
       </h1>
     </section>
-    <section>
-      <%= render 'shared/stats' %>
-    </section>
   </aside>
   <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
-      <h3>Events (<%= @user.microposts.count %>)</h3>
+      <h3>shows (<%= @user.microposts.count %>)</h3>
       <ol class="events">
         <%= render @microposts %>
       </ol>
