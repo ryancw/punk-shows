@@ -23,7 +23,7 @@
 </div>
  
 <script>
-$('#content').html('<%= escape_javascript (render :partial => "content_post") %>')
+$('#content').html('<%= escape_javascript (render :partial => "shared/feed") %>')
   $(function () {
     $('.tabs a:last').tab('show')
   })
