@@ -86,12 +86,12 @@ p {
   line-height: 1;
 }
 
-/*
+
 #logo:hover {
   color: #000000;
   text-decoration: none;
 }
-*/
+
 
 /* footer */
 
@@ -106,16 +106,12 @@ footer a {
   color: #555;
 }  
 
-footer a:hover { 
-  color: #555;
-}
-
 footer small {
   float: left;
 }
 
 footer ul {
-  float: center;
+  float: right;
   list-style: none;
 }
 
