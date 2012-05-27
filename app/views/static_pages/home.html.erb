@@ -1,17 +1,5 @@
 <% provide(:title, 'Home') %>
-<% if signed_in? %>
-  <div class="row">
-    
-    <div class="span8">
-      <h3>UPCOMING SHOWS</h3>
-      <%= render 'shared/feed' %>
-  </div>
-    <div class="span8">
-      <h3>PAST SHOWS</h3>
-      <%= render 'shared/past' %>
-    </div>
-  </div>  
-<% else %>
+
 <ul class="nav nav-tabs">
   <li class ="active"><a href="#upcoming" data-toggle="tab">UPCOMING SHOWS</a></li>
   <li><a href="#past" data-toggle="tab">PAST SHOWS</a></li>
@@ -30,4 +18,3 @@ $('#content').html('<%= escape_javascript (render :partial => "shared/feed") %>'
 </script>  
 
   </div>
-<% end %>
