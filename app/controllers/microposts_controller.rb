@@ -2,6 +2,12 @@ class MicropostsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy, :edit]
   before_filter :correct_user,   only: [:destroy, :edit]
 
+
+def calendar
+  @microposts = Micropost.find(:all)
+  @date = params[:month] ? Date.parse(params[:month]) : Date.today
+end
+
 def new
   @micropost = Micropost.new
 end

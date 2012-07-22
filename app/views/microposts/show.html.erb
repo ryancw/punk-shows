@@ -5,6 +5,9 @@
       <h1>
         <%= @micropost.acts %>
       </h1>
+      <br />
+      <h3><%= @micropost.location %> </h3>
+      <h3><%= @micropost.date.strftime('%b') %> <%= @micropost.date.day %>, <%= @micropost.date.year %> </h3>
     </section>
     <section>
       <% if current_user?(@micropost.user) %>

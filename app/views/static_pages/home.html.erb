@@ -1,13 +1,15 @@
 <% provide(:title, 'Home') %>
 
 <ul class="nav nav-tabs">
-  <li class ="active"><a href="#upcoming" data-toggle="tab">UPCOMING SHOWS</a></li>
+  <li><a href="#upcoming" data-toggle="tab">UPCOMING SHOWS</a></li>
+  <li class ="active"><a href="#calendar" data-toggle="tab">CALENDAR</a></li>
   <li><a href="#past" data-toggle="tab">PAST SHOWS</a></li>
 </ul>
  
 <div class="tab-content">
-  <div class="tab-pane active" id="upcoming"><%= render 'shared/feed' %></div>
+  <div class="tab-pane" id="upcoming"><%= render 'shared/feed' %></div>
   <div class="tab-pane" id="past"><%= render 'shared/past' %></div>
+  <div class="tab-pane active" id="calendar"><%= render 'shared/calendar' %></div>
 </div>
  
 <script>

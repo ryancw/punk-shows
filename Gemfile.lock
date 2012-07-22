@@ -60,6 +60,7 @@ GEM
     coffee-script-source (1.2.0)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    event-calendar (2.3.3)
     execjs (1.3.0)
       multi_json (~> 1.0)
     factory_girl (2.3.2)
@@ -161,6 +162,7 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    watu_table_builder (0.3.0)
     will_paginate (3.0.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
@@ -176,6 +178,7 @@ DEPENDENCIES
   calendar_date_select!
   capybara (= 1.1.2)
   coffee-rails (= 3.2.2)
+  event-calendar
   factory_girl_rails (= 1.4.0)
   faker (= 1.0.1)
   growl (= 1.0.3)
@@ -191,4 +194,5 @@ DEPENDENCIES
   spork (= 0.9.0)
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
+  watu_table_builder
   will_paginate (= 3.0.3)
