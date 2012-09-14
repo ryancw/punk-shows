@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy, :edit]
   before_filter :correct_user,   only: [:destroy, :edit]
+  before_filter :admin_user,     only: [:destroy, :edit]
 
 
 def calendar
