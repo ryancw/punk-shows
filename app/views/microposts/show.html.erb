@@ -10,7 +10,7 @@
       <h3><%= @micropost.date.strftime('%b') %> <%= @micropost.date.day %>, <%= @micropost.date.year %> </h3>
     </section>
     <section>
-      <% if current_user?(@micropost.user) || current_user.admin? %>
+      <% if current_user?(@micropost.user) || current_user?(5) %>
         <%= link_to "edit", edit_micropost_path(@micropost) %>
         //
         <%= link_to "delete", @micropost, method:  :delete,
