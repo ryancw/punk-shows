@@ -3,7 +3,9 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application", media: "all" %>
-<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
+    <meta name="description" content="Punk show listings in the state of Connecticut" >
+    <meta name="keywords" content="connecticut shows, connecticut punk, connecticut, punk, concerts, ct shows, ct, shows" >
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <script type="text/javascript">
