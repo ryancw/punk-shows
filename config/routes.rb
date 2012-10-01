@@ -7,8 +7,8 @@ Punkshows::Application.routes.draw do
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy, :show, :edit, :update]
   resources :relationships, only: [:create, :destroy]
-  resources :microposts, :path => 'show'
-  resources :shows, :controller => "microposts", :as => "microposts"
+  #resources :microposts, :path => 'show'
+  resources :show, :as => :microposts, :controller => :microposts
 
   root to: 'static_pages#home'
 
