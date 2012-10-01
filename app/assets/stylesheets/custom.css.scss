@@ -74,11 +74,17 @@ p {
 
 /* header */
 
+.navbar-inner {
+  #gradient > .vertical(#ffffff, #ECECEC);
+  border: #E2E2E2;
+  .border-radius(6px);
+}
+
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #0000ff;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 10px;
