@@ -2,7 +2,7 @@
     <span class="content">
       <%= feed_item.date.month %>/<%= feed_item.date.day %>
      - <%= feed_item.acts %> @ <%= feed_item.location %>
-     <%= link_to feed_item.name, feed_item %>
+     <%= link_to "details", feed_item %>
      </span>
 
   <% if current_user?(feed_item.user) %>
