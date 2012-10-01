@@ -10,7 +10,7 @@
       <%= date.day %>
       <ul>
         <% for micropost in microposts %>
-          <li><%= link_to h(micropost.acts), show %></li>
+          <li><%= link_to h(micropost.acts), micropost %></li>
     <% end %>
   </ul>
   <% end %>
