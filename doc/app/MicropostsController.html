@@ -70,9 +70,19 @@
 
   <ul class="link-list">
     
+    <li><a href="#method-i-calendar">#calendar</a>
+    
     <li><a href="#method-i-create">#create</a>
     
     <li><a href="#method-i-destroy">#destroy</a>
+    
+    <li><a href="#method-i-edit">#edit</a>
+    
+    <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-show">#show</a>
+    
+    <li><a href="#method-i-update">#update</a>
     
   </ul>
 </nav>
@@ -99,6 +109,8 @@
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
+    <li><a href="./Event.html">Event</a>
+  
     <li><a href="./Micropost.html">Micropost</a>
   
     <li><a href="./MicropostsController.html">MicropostsController</a>
@@ -112,6 +124,8 @@
     <li><a href="./SessionsController.html">SessionsController</a>
   
     <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./Show.html">Show</a>
   
     <li><a href="./StaticPagesController.html">StaticPagesController</a>
   
@@ -154,6 +168,37 @@
       <h3 class="section-header">Public Instance Methods</h3>
 
     
+      <div id="method-i-calendar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">calendar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="calendar-source">
+            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">calendar</span>
+  <span class="ruby-ivar">@microposts</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>)
+  <span class="ruby-ivar">@date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:month</span>] <span class="ruby-operator">?</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:month</span>]) <span class="ruby-operator">:</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- calendar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- calendar-method -->
+
+    
       <div id="method-i-create" class="method-detail ">
         
         <div class="method-heading">
@@ -170,11 +215,11 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 6</span>
+            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@micropost</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">microposts</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:micropost</span>])
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@micropost</span>.<span class="ruby-identifier">save</span>
-    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:success</span>] = <span class="ruby-string">&quot;Micropost created!&quot;</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:success</span>] = <span class="ruby-string">&quot;show created! good job!&quot;</span>
     <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">root_path</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-ivar">@feed_items</span> = []
@@ -207,7 +252,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@micropost</span>.<span class="ruby-identifier">destroy</span>
   <span class="ruby-identifier">redirect_back_or</span> <span class="ruby-identifier">root_path</span>
@@ -220,6 +265,132 @@
 
         
       </div><!-- destroy-method -->
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+  <span class="ruby-ivar">@micropost</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@micropost</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+    <span class="ruby-ivar">@micropost</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File app/controllers/microposts_controller.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+    <span class="ruby-ivar">@micropost</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@micropost</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:micropost</span>])
+      <span class="ruby-identifier">flash</span>[<span class="ruby-value">:success</span>] = <span class="ruby-string">&quot;show updated&quot;</span>
+      <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@micropost</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">render</span> <span class="ruby-string">'edit'</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
 
     
     </section><!-- public-instance-method-details -->

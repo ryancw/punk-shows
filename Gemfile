@@ -11,6 +11,7 @@ gem 'jquery_datepicker'
 gem 'calendar_date_select', :git => 'http://github.com/paneq/calendar_date_select.git', :branch => 'rails3test'
 gem "watu_table_builder", :require => "table_builder"
 gem 'event-calendar', :require => 'event_calendar'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'sqlite3', '1.3.5'

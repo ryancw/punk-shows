@@ -103,6 +103,8 @@
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
+    <li><a href="./Event.html">Event</a>
+  
     <li><a href="./Micropost.html">Micropost</a>
   
     <li><a href="./MicropostsController.html">MicropostsController</a>
@@ -116,6 +118,8 @@
     <li><a href="./SessionsController.html">SessionsController</a>
   
     <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./Show.html">Show</a>
   
     <li><a href="./StaticPagesController.html">StaticPagesController</a>
   
@@ -199,7 +203,7 @@ updated_at :datetime        not null</pre>
           <div class="method-source-code" id="feed-source">
             <pre><span class="ruby-comment"># File app/models/user.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">feed</span>
-  <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">from_users_followed_by</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">Micropost</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- feed-source -->
           

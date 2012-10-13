@@ -103,6 +103,8 @@
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
+    <li><a href="./Event.html">Event</a>
+  
     <li><a href="./Micropost.html">Micropost</a>
   
     <li><a href="./MicropostsController.html">MicropostsController</a>
@@ -116,6 +118,8 @@
     <li><a href="./SessionsController.html">SessionsController</a>
   
     <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./Show.html">Show</a>
   
     <li><a href="./StaticPagesController.html">StaticPagesController</a>
   
@@ -174,7 +178,7 @@
 
           
           <div class="method-source-code" id="about-source">
-            <pre><span class="ruby-comment"># File app/controllers/static_pages_controller.rb, line 13</span>
+            <pre><span class="ruby-comment"># File app/controllers/static_pages_controller.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">about</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- about-source -->
@@ -203,7 +207,7 @@
 
           
           <div class="method-source-code" id="contact-source">
-            <pre><span class="ruby-comment"># File app/controllers/static_pages_controller.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/controllers/static_pages_controller.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">contact</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- contact-source -->
@@ -232,7 +236,7 @@
 
           
           <div class="method-source-code" id="help-source">
-            <pre><span class="ruby-comment"># File app/controllers/static_pages_controller.rb, line 10</span>
+            <pre><span class="ruby-comment"># File app/controllers/static_pages_controller.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">help</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- help-source -->
@@ -265,7 +269,16 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">home</span>
    <span class="ruby-keyword">if</span> <span class="ruby-identifier">signed_in?</span>
      <span class="ruby-ivar">@micropost</span>  = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">microposts</span>.<span class="ruby-identifier">build</span>
-     <span class="ruby-ivar">@feed_items</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">paginate</span>(<span class="ruby-identifier">page</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>])
+     <span class="ruby-ivar">@feed_items</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">'date &gt;= ?'</span>, <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>)
+     <span class="ruby-ivar">@past_items</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">'date &lt; ?'</span>, <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>)
+     <span class="ruby-ivar">@feed_itemsz</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">feed</span>.<span class="ruby-identifier">paginate</span>(<span class="ruby-identifier">page</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>])
+     <span class="ruby-ivar">@microposts</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">all</span>
+     <span class="ruby-ivar">@date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:month</span>] <span class="ruby-operator">?</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:month</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'-'</span>,<span class="ruby-string">'/'</span>)) <span class="ruby-operator">:</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+   <span class="ruby-keyword">else</span>
+     <span class="ruby-ivar">@feed_items</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">'date &gt;= ?'</span>, <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>)
+     <span class="ruby-ivar">@past_items</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">'date &lt; ?'</span>, <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>)
+     <span class="ruby-ivar">@microposts</span> = <span class="ruby-constant">Micropost</span>.<span class="ruby-identifier">all</span>
+     <span class="ruby-ivar">@date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:month</span>] <span class="ruby-operator">?</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:month</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'-'</span>,<span class="ruby-string">'/'</span>)) <span class="ruby-operator">:</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
    <span class="ruby-keyword">end</span>
  <span class="ruby-keyword">end</span></pre>
           </div><!-- home-source -->
