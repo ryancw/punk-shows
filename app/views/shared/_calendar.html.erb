@@ -10,7 +10,11 @@
       <%= date.day %>
       <ul>
         <% for micropost in microposts %>
+          <% if micropost != microposts[microposts.count - 1] %>
+          <li id="next"><%= link_to h(micropost.acts), micropost %></li>
+          <% else %>
           <li><%= link_to h(micropost.acts), micropost %></li>
+          <% end %>
     <% end %>
   </ul>
   <% end %>

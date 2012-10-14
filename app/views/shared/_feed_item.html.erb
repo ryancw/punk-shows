@@ -1,16 +1,13 @@
 <li id="<%= feed_item.id %>">
     <span class="content">
-      <%= feed_item.date.month %>/<%= feed_item.date.day %>
-     - <%= feed_item.acts %> @ <%= feed_item.location %>
-     <%= link_to "details", feed_item %>
-     </span>
-
+     <%= link_to feed_item.link, feed_item %>
+     
   <% if current_user?(feed_item.user) %>
-    <div class="span9 offset2">
-    <%= link_to "delete", feed_item, method:  :delete,
+    <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_micropost_path(feed_item) %>
+    <%= link_to '<i class="icon-trash"></i>'.html_safe, feed_item, method:  :delete,
                                      confirm: "You sure?",
                                      title:   feed_item.content %>
-    <%= link_to "edit", edit_micropost_path(feed_item) %>
-  </div>
+    
   <% end %>
+  </span>
 </li>

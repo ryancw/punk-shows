@@ -16,6 +16,10 @@ def link
     "#{self.date.month}/#{self.date.day} - #{self.acts} @ #{self.location}"
 end
 
+def title_link
+  "#{self.acts} @ #{self.location} - #{self.date.month}/#{self.date.day}"
+end
+
 
   private
 
