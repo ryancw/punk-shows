@@ -37,35 +37,14 @@ ActiveRecord::Schema.define(:version => 20120401174334) do
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
-  create_table "rshows", :force => true do |t|
-    t.date     "date"
-    t.string   "location"
-    t.string   "acts"
-    t.text     "details"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "rshows", ["user_id", "date"], :name => "index_rshows_on_user_id_and_date"
-
-  create_table "shows", :force => true do |t|
-    t.date     "date"
-    t.string   "location"
-    t.string   "acts"
-    t.string   "details"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "admin"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
