@@ -19,7 +19,11 @@
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Save changes", :class => "btn btn-large btn-primary" %>
-    <% end %>
+      <div class="offset 6">
+        <%= cancel_link %>
+      </div>
 
+    <% end %>
+       
   </div>
 </div>

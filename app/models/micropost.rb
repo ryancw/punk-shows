@@ -12,12 +12,17 @@ class Micropost < ActiveRecord::Base
   # Returns microposts from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
 
+
 def link
+  if(self.date.year == Date.today.year)
     "#{self.date.month}/#{self.date.day} - #{self.acts} @ #{self.location}"
+  else
+    "#{self.date.month}/#{self.date.day}/#{self.date.year} - #{self.acts} @ #{self.location}"
+  end
 end
 
 def title_link
-  "#{self.acts} @ #{self.location} - #{self.date.month}/#{self.date.day}"
+  "#{self.acts} @ #{self.location} - #{self.date.month}/#{self.date.day}/#{self.date.year}"
 end
 
 
