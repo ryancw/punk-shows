@@ -109,6 +109,10 @@ a:hover {
   text-decoration: underline;
 }
 
+#calendar a:hover {
+  text-decoration: underline;
+}
+
 
 /* typography */
 /* 
@@ -429,12 +433,23 @@ aside {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+  color: #999;
+  font-weight: normal;
 }
 
-#calendar #month a, #calendar #month a:hover {
+#calendar #month a{
   text-decoration: none;
   padding: 0 10px;
   color: #999;
+  font-weight: normal;
+
+}
+
+#calendar #month a:hover {
+  text-decoration: underline;
+  padding: 0 10px;
+  color: #999;
+  font-weight: normal;
 }
 
 #calendar .today {
@@ -449,7 +464,7 @@ aside {
 }
 
 #calendar li {
-  color: #000;
+  color: #555;
   margin: 0;
   padding: 0;
   font-size: 11px;
@@ -459,8 +474,4 @@ aside {
 
 #calendar #next {
   border-bottom: 1px dotted #666;
-}
-
-#calendar #next:link {
-  color: #000;
 }

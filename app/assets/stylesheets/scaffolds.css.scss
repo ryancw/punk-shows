@@ -9,13 +9,11 @@ p, ol, ul, td {
   font-family:  arial, helvetica, sans-serif;
   font-size: 12px;
   line-height: 18px; }
-/*
+
 h1, h2, h3 {
   font-family:  arial, helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 18px;
 }
-*/
+
 
 pre {
   background-color: #eee;
@@ -37,6 +35,10 @@ ul navlist {
   &:hover {
     color: #0192b5;
     text-decoration: underline; } }
+
+li {
+  color: 000;
+}
     
 
 
