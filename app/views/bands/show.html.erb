@@ -1,0 +1,27 @@
+<% provide(:title, @band.name) %>
+<div class="row">
+  <aside class="span3">
+    <section>
+      <h4>
+        <%= @band.name %>
+      </h4>
+      <h3><%= @band.city %> </h3>
+    </section>
+    <section>
+      <% if current_user?(@band.user) || current_user?(5) %>
+        <%= link_to "edit", edit_band_path(@band) %>
+        //
+        <%= link_to "delete", @band, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   @band.name %>
+      <% end %>
+    </section>
+  </aside>
+  <div class="span9">
+    
+     <div class="well">
+     <%= simple_format(@band.description) %>
+   </div>
+
+  </div>
+</div>

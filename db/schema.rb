@@ -11,20 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120401174334) do
+ActiveRecord::Schema.define(:version => 20121019051538) do
 
-  create_table "microposts", :force => true do |t|
-    t.string   "content"
+  create_table "bands", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "established"
+    t.boolean  "active"
+    t.string   "city"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.date     "date"
-    t.string   "location"
-    t.string   "acts"
-    t.text     "details"
   end
 
-  add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+  add_index "bands", ["user_id", "created_at"], :name => "index_bands_on_user_id_and_created_at"
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(:version => 20120401174334) do
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
+
+  create_table "shows", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.date     "date"
+    t.string   "location"
+    t.string   "acts"
+    t.text     "details"
+  end
+
+  add_index "shows", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"

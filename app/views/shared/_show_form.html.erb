@@ -1,0 +1,22 @@
+<%= form_for(@show) do |f| %>
+ <%= render 'shared/error_messages', object: f.object %>
+<div class="row">
+  <aside class="span4">
+      <div class="field">
+    <%= f.date_select :date %>
+  </div>
+</aside>
+<div class="span8">
+  <div class="field">
+  	<%= f.text_field :acts, placeholder: "bands (separate with comma)" %>
+  </div>
+  <div class="field">
+  	<%= f.text_field :location, placeholder: "location" %>
+  </div>
+
+  <div class="field">
+  	<%= f.text_area :details, placeholder: "details: time, cost, address, directions, facebook, contact info. feel free to use html! (<b>, <a href>)", :size => "5x10"  %>
+  </div>
+  <%= f.submit "submit", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>

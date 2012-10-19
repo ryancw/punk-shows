@@ -3,7 +3,7 @@
      <%= link_to feed_item.link, feed_item %>
      
   <% if current_user?(feed_item.user) %>
-    <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_micropost_path(feed_item) %>
+    <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(feed_item) %>
     <%= link_to '<i class="icon-trash"></i>'.html_safe, feed_item, method:  :delete,
                                      confirm: "You sure?",
                                      title:   feed_item.content %>

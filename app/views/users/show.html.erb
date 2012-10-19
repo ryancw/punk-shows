@@ -8,12 +8,12 @@
     </section>
   </aside>
   <div class="span8">
-    <% if @user.microposts.any? %>
-      <h3>shows (<%= @user.microposts.count %>)</h3>
+    <% if @user.shows.any? %>
+      <h3>shows (<%= @user.shows.count %>)</h3>
       <ol class="events">
-        <%= render @microposts %>
+        <%= render @shows %>
       </ol>
-      <%= will_paginate @microposts %>
+      <%= will_paginate @shows %>
     <% end %>
   </div>
 </div>

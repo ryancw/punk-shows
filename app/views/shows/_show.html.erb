@@ -1,0 +1,13 @@
+<li>
+  <span class="content"><%= show.date %>
+     - <%= show.acts %> @ <%= show.location %></span>
+  <span class="timestamp">
+    created <%= time_ago_in_words(show.created_at) %> ago.
+  </span>
+  <% if current_user?(show.user) %>
+    <%= link_to "delete", show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    <%= link_to "details", show %>
+  <% end %>
+</li>

@@ -1,0 +1,22 @@
+<%= form_for(@band) do |f| %>
+ <%= render 'shared/error_messages', object: f.object %>
+<div class="row">
+  <aside class="span3">
+      <div class="field">
+    <%= f.date_select :established %>
+  </div>
+</aside>
+<div class="span9">
+  <div class="field">
+  	<%= f.text_field :name, placeholder: "name" %>
+  </div>
+  <div class="field">
+  	<%= f.text_field :city, placeholder: "city/area" %>
+  </div>
+
+  <div class="field">
+  	<%= f.text_area :description, placeholder: "description. feel free to use html! (<b>, <a href>)", :size => "5x10"  %>
+  </div>
+  <%= f.submit "submit", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>

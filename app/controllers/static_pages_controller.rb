@@ -1,16 +1,16 @@
 class StaticPagesController < ApplicationController
  def home
     if signed_in?
-      @micropost  = current_user.microposts.build
-      @feed_items = Micropost.where('date >= ?', Date.today)
-      @past_items = Micropost.where('date < ?', Date.today)
+      @show  = current_user.shows.build
+      @feed_items = Show.where('date >= ?', Date.today)
+      @past_items = Show.where('date < ?', Date.today)
       @feed_itemsz = current_user.feed.paginate(page: params[:page])
-      @microposts = Micropost.all
+      @shows = Show.all
       @date = params[:month] ? Date.parse(params[:month].gsub('-','/')) : Date.today
     else
-      @feed_items = Micropost.where('date >= ?', Date.today)
-      @past_items = Micropost.where('date < ?', Date.today)
-      @microposts = Micropost.all
+      @feed_items = Show.where('date >= ?', Date.today)
+      @past_items = Show.where('date < ?', Date.today)
+      @shows = Show.all
       @date = params[:month] ? Date.parse(params[:month].gsub('-','/')) : Date.today
     end
   end

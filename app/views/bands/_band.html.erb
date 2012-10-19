@@ -1,0 +1,13 @@
+<li>
+  <span class="content"><%= band.established %>
+     - <%= band.name %> @ <%= band.city %></span>
+  <span class="timestamp">
+    created <%= time_ago_in_words(band.created_at) %> ago.
+  </span>
+  <% if current_user?(band.user) %>
+    <%= link_to "delete", band, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   band.name %>
+    <%= link_to "details", band %>
+  <% end %>
+</li>

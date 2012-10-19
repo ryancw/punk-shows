@@ -1,0 +1,28 @@
+<% provide(:title, @show.title_link) %>
+<div class="row">
+  <aside class="span3">
+    <section>
+      <h4>
+        <%= @show.acts %>
+      </h4>
+      <h3><%= @show.location %> </h3>
+      <h3><%= @show.date.strftime('%b') %> <%= @show.date.day %>, <%= @show.date.year %> </h3>
+    </section>
+    <section>
+      <% if current_user?(@show.user) || current_user?(5) %>
+        <%= link_to "edit", edit_show_path(@show) %>
+        //
+        <%= link_to "delete", @show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   @show.content %>
+      <% end %>
+    </section>
+  </aside>
+  <div class="span9">
+    
+     <div class="well">
+     <%= simple_format(@show.details) %>
+   </div>
+
+  </div>
+</div>
