@@ -13,12 +13,76 @@
 
 /* universal */
 
+
+
+#Wrapper {
+}
+#Container {
+  width: 930px;
+  margin: 0 auto;
+}
+
+#HeaderWrapper {
+  padding: 10px 0;
+  height: 25px;
+  display: block;
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 15px;
+} 
+#Header {
+  width: 930px;
+  margin: 0 auto;
+}
+#TopLevelNav {
+  margin-top: 5px;
+  clear: both;
+  display: block;
+}
+#TopLevelNav .NewMail {
+  color: #ff2984;
+}
+#TopLevelNav li {
+  display: inline;
+  margin: 0 20px 0 0;
+  line-height: 1.5;
+  font-weight: bold;
+}
+#TopLevelNav li .Identity {
+  font-weight: bold;
+}
+#TopLevelNav li .Identity small {
+  font-weight: normal;
+}
+#TopLevelNav li a {
+  font-size: 13px;
+}
+
+/* #navlist ul:link {
+  color: #0192b5;
+
+}
+
+#navlist ul:visited {
+  color: #0192b5;
+
+}
+*/
+
+#navlist ul:hover {
+  text-decoration: underline;
+
+}
+
+
+/* OLD */
+
 html {
   overflow-y: scroll;
 }
 
 body {
   padding-top: 20px;
+  font-family: Arial;
 }
 
 section {
@@ -37,14 +101,23 @@ textarea {
   margin-bottom: 10px;
 }
 
-/* typography */
+a:link {
+  color: #000;
+}
 
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* typography */
+/* 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: left;
@@ -67,9 +140,23 @@ h5 {
 
 
 }
+*/
+
+h3 {
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 2em;
+  text-align: left;
+  font-weight: bold;
+  color: 000;
+  line-height: 1;
+}
 
 p {
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.7em;
 }
 
@@ -92,16 +179,17 @@ p {
 }
 
 #logo {
-font-family: 'Nothing You Could Do', cursive;
+/* font-family: 'Nothing You Could Do', cursive; */
+  font-family: Arial;
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 10px;
-  /* font-weight: bold; */
-  line-height: 1;
+  /* padding-top: 10px; */
+  font-weight: bold;
+  /* line-height: 1; */
 }
 
 
@@ -109,10 +197,42 @@ font-family: 'Nothing You Could Do', cursive;
   text-decoration: none;
 }
 
+#navlist {
+  float: right;
+}
+
+#navlist li
+{
+font-family: Arial;
+display: inline;
+list-style-type: none;
+padding-right: 5px;
+padding-left: 5px;
+}
+
 
 /* footer */
 
+#FooterWrapper {
+  margin: 40px 0 0;
+}
+#Footer {
+  width: 930px;
+  border-top: 1px solid #eaeaea;
+  margin: 0 auto;
+  padding: 10px 0 20px;
+}
+#Footer #Nav {
+}
+#Footer #Nav li {
+  display: inline;
+  font-size: .95em;
+  margin: 0 10px 0 0;
+}
+
 footer {
+  width: 940px;
+  margin: 0px auto;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
@@ -267,6 +387,11 @@ aside {
 }
 
 /* calendar */
+
+#calendar a {
+  color: #000;
+}
+
 #calendar table {
   border-collapse: collapse;
   width: 100%;
@@ -324,6 +449,7 @@ aside {
 }
 
 #calendar li {
+  color: #000;
   margin: 0;
   padding: 0;
   font-size: 11px;
@@ -333,4 +459,8 @@ aside {
 
 #calendar #next {
   border-bottom: 1px dotted #666;
+}
+
+#calendar #next:link {
+  color: #000;
 }

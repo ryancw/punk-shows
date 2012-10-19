@@ -2,12 +2,10 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
+      <h4>
         <%= @micropost.acts %>
-      </h1>
-      <br />
+      </h4>
       <h3><%= @micropost.location %> </h3>
-      <br />
       <h3><%= @micropost.date.strftime('%b') %> <%= @micropost.date.day %>, <%= @micropost.date.year %> </h3>
     </section>
     <section>

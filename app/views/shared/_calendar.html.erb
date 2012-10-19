@@ -8,7 +8,7 @@
   <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')%>
     <% calendar.day(:day_method => :date) do |date, microposts| %>
       <%= date.day %>
-      <ul>
+      <ul id="calendar">
         <% for micropost in microposts %>
           <% if micropost != microposts[microposts.count - 1] %>
           <li id="next"><%= link_to h(micropost.acts), micropost %></li>

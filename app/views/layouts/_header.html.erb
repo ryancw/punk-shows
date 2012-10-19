@@ -1,21 +1,24 @@
 <header>
-<header class="navbar">
-  <div class="navbar-inner">
+<header class="top">
+
+ 
+
+
+<div id="HeaderWrapper">
+  <div id="header">
+  <div class="top-inner">
     <div class="container">
       <%= link_to "CONNECTICUT", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
+        <ul id="navlist">
           <% if signed_in? %>
-            <li><%= link_to "Users", users_path %></li>
+          <li> You are <%= link_to current_user.name, current_user %></li> /
+            
             <li> <%= link_to "Create show", newshow_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
@@ -27,7 +30,10 @@
             <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
         </ul>
-      </nav>
+      
+    </div>
     </div>
   </div>
+  </div>
+</header>
 </header>
