@@ -1,6 +1,7 @@
 <% if @past_items.any? %>
   <ol class="microposts">
     <%= render partial: 'shared/feed_item', collection: @past_items %>
+    <%= will_paginate @past_items %>
   </ol>
   
 <% end %>

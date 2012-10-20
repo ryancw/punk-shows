@@ -1,5 +1,4 @@
  @import "bootstrap"; 
- @import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do);
 
 /* mixins, variables, etc. */
 
@@ -13,39 +12,54 @@
 
 /* universal */
 
-
-
-#Wrapper {
-}
-#Container {
-  width: 930px;
-  margin: 0 auto;
-}
-
 #HeaderWrapper {
   padding: 10px 0;
-  height: 25px;
+  height: 60px;
   display: block;
   border-bottom: 1px solid #EEE;
   margin-bottom: 15px;
 } 
-#Header {
-  width: 930px;
-  margin: 0 auto;
-}
-#TopLevelNav {
-  margin-top: 5px;
-  clear: both;
-  display: block;
-}
-#TopLevelNav .NewMail {
-  color: #ff2984;
-}
+
 #TopLevelNav li {
   display: inline;
   margin: 0 20px 0 0;
   line-height: 1.5;
   font-weight: bold;
+  float: left;
+  padding-left: -5px;
+}
+
+#header {
+  width: 930px;
+  margin: 0 auto;
+}
+
+#pizza ul {
+  float: left;
+  padding-left: -10px;
+}
+
+#pizza li {
+margin: 0 20px 0 0;
+  display: inline;
+  font-weight: bold;
+  float: left;
+
+}
+
+#month-list {
+  border-bottom: 1px solid #EEE;
+}
+
+/*
+#Wrapper {
+}
+#Container {
+  width: 940px;
+  margin: 0 auto;
+}
+ul#TopLevelNav {
+  float: right;
 }
 #TopLevelNav li .Identity {
   font-weight: bold;
@@ -56,23 +70,19 @@
 #TopLevelNav li a {
   font-size: 13px;
 }
-
-/* #navlist ul:link {
+#navlist ul:link {
   color: #0192b5;
 
 }
-
 #navlist ul:visited {
   color: #0192b5;
-
 }
-*/
-
 #navlist ul:hover {
   text-decoration: underline;
 
 }
 
+*/
 
 /* OLD */
 
@@ -102,11 +112,11 @@ textarea {
 }
 
 a:link {
-  color: #000;
+  color: #0192b5;
 }
 
 a:visited {
-  color: #000;
+  color: #0192b5;
 }
 
 a:hover {
@@ -151,16 +161,18 @@ h5 {
 */
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: normal;
+
 }
 
 h4 {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: left;
   font-weight: bold;
   color: 000;
   line-height: 1;
+  letter-spacing: -1px;
 }
 
 p {
@@ -187,7 +199,6 @@ p {
 }
 
 #logo {
-/* font-family: 'Nothing You Could Do', cursive; */
   font-family: Arial;
   float: left;
   margin-right: 10px;
@@ -216,6 +227,12 @@ display: inline;
 list-style-type: none;
 padding-right: 5px;
 padding-left: 5px;
+}
+
+
+
+#below {
+  float: left;
 }
 
 
@@ -301,9 +318,9 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+input, textarea, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 50%;
   padding: 10px;
   height: auto;
   margin-bottom: 15px;
@@ -351,7 +368,16 @@ input, textarea, select, .uneditable-input {
 }
 .content {
   display: block;
+  list-style: none;
+  
 }
+
+.future {
+  padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+    padding-left: 0.5em;
+}
+
 .timestamp {
   color: $grayLight;
 }
@@ -370,6 +396,10 @@ aside {
   color: $grayLight;
   text-align: center;
 }
+
+/* add show form */
+.date { display: inline; }
+
 
 /* sidebar */
 

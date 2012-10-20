@@ -13,6 +13,65 @@ def new
   @show = Show.new
 end
 
+def past
+  @past_items = Show.where('date < ?', Date.today,).order("date DESC").paginate(page: params[:page])
+end
+
+#def future
+#  @feed_items = Show.where('date >= ?', Date.today)
+#    @future_shows = Show.where('date >= ?', Date.today)
+#end
+
+def future
+  @januarys = Array.new
+  @februarys = Array.new
+  @marchs = Array.new
+  @aprils = Array.new
+  @mays = Array.new
+  @junes = Array.new
+  @julys = Array.new
+  @augusts = Array.new
+  @septembers = Array.new
+  @octobers = Array.new
+  @novembers = Array.new
+  @decembers = Array.new
+  @futures = Show.where('date >= ?', Date.today)
+  for future in @futures
+    case future.date.month
+    when 1
+      @januarys.push future
+    when 2
+      @februarys.push future
+    when 3
+      @marchs.push future
+    when 4
+      @aprils.push future
+    when 5
+      @mays.push future
+    when 6
+      @junes.push future
+    when 7
+      @julys.push future
+    when 8
+      @augusts.push future
+    when 9
+      @septembers.push future
+    when 10
+      @octobers.push future
+    when 11
+      @novembers.push future
+    when 12
+      @decembers.push future
+    end
+  end
+end
+
+
+def futureshows
+  @future_shows = Show.where('date >= ?', Date.today)
+end
+
+
 def show
     @show = Show.find(params[:id])
   end

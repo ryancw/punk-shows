@@ -7,7 +7,7 @@ Punkshows::Application.routes.draw do
   resources :sessions,      only: [:new, :create, :destroy]
   resources :shows,    only: [:create, :destroy, :show, :edit, :update]
   resources :relationships, only: [:create, :destroy]
-  resources :bands,         only: [:create, :destroy, :show, :edit, :update]
+  resources :bands,         only: [:create, :destroy, :show, :edit, :update, :index]
 
   root to: 'static_pages#home'
 
@@ -22,6 +22,8 @@ Punkshows::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/newshow', to: 'shows#new'
   match '/addband', to: 'bands#new'
+  match '/past', to: 'shows#past'
+  match '/future', to: 'shows#future'
 
   get "static_pages/home"
   get "static_pages/about"

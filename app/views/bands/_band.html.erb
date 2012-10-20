@@ -1,6 +1,6 @@
 <li>
-  <span class="content"><%= band.established %>
-     - <%= band.name %> @ <%= band.city %></span>
+  <span class="content"><%= band.established.year %>
+     - <%= band.name %> <%= band.city %></span>
   <span class="timestamp">
     created <%= time_ago_in_words(band.created_at) %> ago.
   </span>

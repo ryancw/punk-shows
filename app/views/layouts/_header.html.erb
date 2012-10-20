@@ -1,35 +1,12 @@
 <header>
 <header class="top">
-
- 
-
-
 <div id="HeaderWrapper">
-  <div id="header">
-  <div class="top-inner">
-    <div class="container">
+  <div class="container">
       <%= link_to "CONNECTICUT", root_path, id: "logo" %>
       <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      <%= image_tag("ctsmall.gif", :size => "25x35") %>
-      
-
         <ul id="navlist">
           <% if signed_in? %>
-          <li> You are <%= link_to current_user.name, current_user %></li> /
-            
+            <li> You are <%= link_to current_user.name, current_user %></li> /
             <li> <%= link_to "Create show", newshow_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -47,10 +24,14 @@
             <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
         </ul>
-      
+      </div>
+      <div class="container">
+      <ul id="pizza">
+        <li><%= link_to "UPCOMING SHOWS", future_path %></li>
+        <li><%= link_to "CALENDAR", root_path %></li>
+        <li><%= link_to "PAST SHOWS", past_path %></li>
+      </ul>
     </div>
-    </div>
-  </div>
   </div>
 </header>
 </header>

@@ -24,6 +24,10 @@ def update
     end
   end
 
+  def index
+    @bands = Band.paginate(page: params[:page])
+  end
+
   def create
     @band = current_user.bands.build(params[:band])
     if @band.save

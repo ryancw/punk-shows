@@ -1,14 +1,13 @@
 <% provide(:title, 'home') %>
 
 <ul class="nav nav-tabs">
-  <li><a href="#upcoming" data-toggle="tab">UPCOMING SHOWS</a></li>
+  <li><%= link_to "UPCOMING SHOWS", future_path %></li>
   <li class ="active"><a href="#calendar" data-toggle="tab">CALENDAR</a></li>
-  <li><a href="#past" data-toggle="tab">PAST SHOWS</a></li>
+  <li><%= link_to "PAST SHOWS", past_path %></li>
 </ul>
  
 <div class="tab-content">
-  <div class="tab-pane" id="upcoming"><%= render 'shared/feed' %></div>
-  <div class="tab-pane" id="past"><%= render 'shared/past' %></div>
+
   <div class="tab-pane active" id="calendar"><%= render 'shared/calendar' %></div>
 </div>
  
@@ -19,4 +18,4 @@ $('#content').html('<%= escape_javascript (render :partial => "shared/feed") %>'
   })
 </script>  
 
-  </div>
+  

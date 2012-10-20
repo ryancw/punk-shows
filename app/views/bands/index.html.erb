@@ -1,0 +1,10 @@
+<% provide(:title, 'All bands') %>
+<h4>All Bands</h4>
+
+<%= will_paginate %>
+
+<ul class="bands">
+  <%= render @bands %>
+</ul>
+
+<%= will_paginate %>

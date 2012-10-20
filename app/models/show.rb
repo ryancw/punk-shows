@@ -8,10 +8,15 @@ class Show < ActiveRecord::Base
   validates :acts, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
 
- default_scope :order => 'shows.date ASC'
+  #default_scope :order => 'shows.date ASC'
 
   # Returns shows from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
+
+self.per_page = 25
+  def to_param
+    "#{id} #{acts}".parameterize
+  end
 
 
 def link

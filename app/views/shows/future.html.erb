@@ -1,0 +1,252 @@
+<% provide(:title, 'future shows') %>
+<h4> FUTURE SHOWS </h4>
+
+		<% if !@januarys.empty? %>
+        <h3 id="month-list"> January </h3>
+        <% for show in @januarys %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@februarys.empty? %>
+        <h3 id="month-list"> February </h3>
+        <% for show in @februarys %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@marchs.empty? %>
+        <h3 id="month-list"> March </h3>
+        <% for show in @marchs %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@aprils.empty? %>
+        <h3 id="month-list"> April </h3>
+        <% for show in @aprils %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@mays.empty? %>
+        <h3 id="month-list"> May </h3>
+        <% for show in @mays %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@junes.empty? %>
+        <h3 id="month-list"> June </h3>
+        <% for show in @junes %>
+        <li id="microposts">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@junes.empty? %>
+        <h3 id="month-list"> June </h3>
+        <% for show in @junes %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+
+
+    	<% if !@julys.empty? %>
+        <h3 id="month-list"> July </h3>
+        <% for show in @julys %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@augusts.empty? %>
+        <h3 id="month-list"> August </h3>
+        <% for show in @augusts %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@septembers.empty? %>
+        <h3 id="month-list"> September </h3>
+        <% for show in @septembers %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+        
+        <% if !@octobers.empty? %>
+        <h3 id="month-list"> October </h3>
+        <% for show in @octobers %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@novembers.empty? %>
+        <h3 id="month-list"> November </h3>
+        <% for show in @novembers %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
+    	<% if !@decembers.empty? %>
+        <h3 id="month-list"> December </h3>
+        <% for show in @decembers %>
+        <li id="<%= show.id %>">
+    	<span class="content">
+     	<%= link_to show.link, show %>
+     
+  		<% if current_user?(show.user) %>
+    		<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_show_path(show) %>
+    		<%= link_to '<i class="icon-trash"></i>'.html_safe, show, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   show.content %>
+    
+  		<% end %>
+  		</span>
+		</li>
+    	<% end %>
+    	<% end %>
+
