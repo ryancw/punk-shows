@@ -1,9 +1,11 @@
 <div id="calendar">
+  <div id="month-select">
   <h2 id="month">
     <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-01") %>
     <%= h @date.strftime("%B %Y") %>
     <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-01") %>
   </h2>
+</div>
   <%= calendar_for @shows, :year => @date.year, :month => @date.month do |calendar| %>
   <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')%>
     <% calendar.day(:day_method => :date) do |date, shows| %>
