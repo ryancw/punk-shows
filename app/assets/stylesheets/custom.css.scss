@@ -14,7 +14,7 @@
 
 #HeaderWrapper {
   padding: 10px 0;
-  height: 60px;
+  height: 50px;
   display: block;
   border-bottom: 1px solid #EEE;
   margin-bottom: 15px;
@@ -34,55 +34,29 @@
   margin: 0 auto;
 }
 
-#pizza ul {
-  float: left;
-  padding-left: -10px;
-}
-
-#pizza li {
-margin: 0 20px 0 0;
-  display: inline;
-  font-weight: bold;
-  float: left;
-
+#topheader {
+  margin-bottom: 10px;
 }
 
 #month-list {
-  border-bottom: 1px solid #EEE;
+  
 }
 
-/*
-#Wrapper {
+#titles { 
+  margin: 0; 
+  padding: 0; 
+  display: inline; 
+  padding-bottom: -10px; 
+  padding-left: 2px;
 }
-#Container {
-  width: 940px;
-  margin: 0 auto;
-}
-ul#TopLevelNav {
-  float: right;
-}
-#TopLevelNav li .Identity {
-  font-weight: bold;
-}
-#TopLevelNav li .Identity small {
-  font-weight: normal;
-}
-#TopLevelNav li a {
-  font-size: 13px;
-}
-#navlist ul:link {
-  color: #0192b5;
-
-}
-#navlist ul:visited {
-  color: #0192b5;
-}
-#navlist ul:hover {
-  text-decoration: underline;
-
+#titles li {
+  padding-right: 20px;
+  display: inline;
 }
 
-*/
+li {
+  list-style-type: none;
+}
 
 /* OLD */
 
@@ -129,41 +103,10 @@ a:hover {
 
 
 /* typography */
-/* 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 2em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-h2 {
-  font-size: 1.7em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #999;
-}
-
-h5 {
-  font-size: 1em;
-  text-align: left;
-  font-weight: normal;
-  color: 000;
-
-
-}
-*/
 
 h3 {
   font-size: 1.3em;
   font-weight: normal;
-
 }
 
 h4 {
@@ -171,8 +114,7 @@ h4 {
   text-align: left;
   font-weight: bold;
   color: 000;
-  line-height: 1;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
 }
 
 p {
@@ -327,6 +269,15 @@ input, textarea, .uneditable-input {
   @include box_sizing;
 }
 
+.btn {
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.btn-off {
+  margin-top: 8px;
+}
+
 #error_explanation {
   color:#f00;
   ul {
@@ -361,9 +312,16 @@ input, textarea, .uneditable-input {
   list-style: none;
   margin: 10px 0 0 0;
 
-  li {
+  
+
+  li{
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+    
+  }
+
+  a:link, a:visited{
+  color: #000;
   }
 }
 .content {
@@ -437,7 +395,7 @@ aside {
 
 #calendar td,
 #calendar th {
-  font-family: "Lucida Grande",arial,helvetica,sans-serif;
+  font-family: arial,helvetica,sans-serif;
   font-size: 10px;
   padding: 6px;
   border: 1px solid #999;
@@ -498,6 +456,7 @@ aside {
 }
 
 #calendar li {
+
   color: #555;
   margin: 0;
   padding: 0;

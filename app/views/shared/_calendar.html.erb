@@ -13,10 +13,27 @@
           <% if show != shows[shows.count - 1] %>
           <li id="next"><%= link_to h(show.acts), show %></li>
           <% else %>
-          <li><%= link_to h(show.acts), show %></li>
+          <li><%= link_to h(show.acts), show, :title => show.acts + ' @ ' + show.location %>
+          </li>
           <% end %>
     <% end %>
   </ul>
   <% end %>
   <% end %>
 </div>
+
+<script>
+$("#calendar a").tooltip({ 
+    bodyHandler: function() { 
+        return $($(this).attr("href")).html(); 
+    }, 
+    showURL: false 
+});
+
+$("#next a").tooltip({ 
+    bodyHandler: function() { 
+        return $($(this).attr("href")).html(); 
+    }, 
+    showURL: false 
+});
+</script>

@@ -19,7 +19,7 @@ Punkshows::Application.routes.draw do
   
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
-  match '/contact', to: 'static_pages#contact'
+  match '/links', to: 'static_pages#links'
   match '/newshow', to: 'shows#new'
   match '/addband', to: 'bands#new'
   match '/past', to: 'shows#past'

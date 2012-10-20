@@ -1,13 +1,13 @@
 <header>
 <header class="top">
 <div id="HeaderWrapper">
-  <div class="container">
+  <div class="container" id="topheader">
       <%= link_to "CONNECTICUT", root_path, id: "logo" %>
       <%= image_tag("ctsmall.gif", :size => "25x35") %>
         <ul id="navlist">
           <% if signed_in? %>
-            <li> You are <%= link_to current_user.name, current_user %></li> /
-            <li> <%= link_to "Create show", newshow_path %></li>
+            <li><%= link_to current_user.name, current_user %></li> /
+            <li> <%= link_to "Add show", newshow_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -26,7 +26,7 @@
         </ul>
       </div>
       <div class="container">
-      <ul id="pizza">
+        <ul id="titles">
         <li><%= link_to "UPCOMING SHOWS", future_path %></li>
         <li><%= link_to "CALENDAR", root_path %></li>
         <li><%= link_to "PAST SHOWS", past_path %></li>

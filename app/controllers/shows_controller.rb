@@ -22,6 +22,7 @@ end
 #    @future_shows = Show.where('date >= ?', Date.today)
 #end
 
+
 def future
   @januarys = Array.new
   @februarys = Array.new
