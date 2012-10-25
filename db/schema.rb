@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121019051538) do
+ActiveRecord::Schema.define(:version => 20121025193119) do
 
   create_table "bands", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(:version => 20121019051538) do
     t.string   "location"
     t.string   "acts"
     t.text     "details"
+    t.string   "fblink"
+    t.string   "flyerlink"
+    t.string   "altlink"
   end
 
   add_index "shows", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
