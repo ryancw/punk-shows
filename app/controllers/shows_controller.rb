@@ -36,7 +36,7 @@ def future
   @octobers = Array.new
   @novembers = Array.new
   @decembers = Array.new
-  @futures = Show.where('date >= ?', Date.today)
+  @futures = Show.where('date >= ?', Date.today).sort! { |a,b| a.date <=> b.date }
   for future in @futures
     case future.date.month
     when 1
@@ -65,6 +65,19 @@ def future
       @decembers.push future
     end
   end
+
+ # @januarys.sort! { |a,b| a.date <=> b.date }
+  #@februarys.sort! { |a,b| a.date <=> b.date }
+ # @marchs.sort! { |a,b| a.date <=> b.date }
+ ## @aprils.sort! { |a,b| a.date <=> b.date }
+ # @mays.sort! { |a,b| a.date <=> b.date }
+ # @junes.sort! { |a,b| a.date <=> b.date }
+ # @julys.sort! { |a,b| a.date <=> b.date }
+#  @augusts.sort! { |a,b| a.date <=> b.date }
+ # @septembers.sort! { |a,b| a.date <=> b.date }
+ # @octobers.sort! { |a,b| a.date <=> b.date }
+ # @novembers.sort! { |a,b| a.date <=> b.date }
+  #@decembers.sort! { |a,b| a.date <=> b.date }
 end
 
 
