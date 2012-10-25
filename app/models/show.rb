@@ -1,5 +1,5 @@
 class Show < ActiveRecord::Base
-  attr_accessible :content, :date, :location, :acts, :details
+  attr_accessible :content, :date, :location, :acts, :details, :fblink, :flyerlink, :altlink
   belongs_to :user
   has_many :bands
 

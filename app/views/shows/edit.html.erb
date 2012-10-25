@@ -2,12 +2,12 @@
 <h1>edit details</h1>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span9 offset3">
   <%= form_for(@show) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
 
-      <%= f.label :acts %>
+      <%= f.label "Bands (use parentheses to surround band name if name contains a comma)" %>
       <%= f.text_field :acts %>
 
       <%= f.label :location %>
@@ -18,6 +18,15 @@
 
       <%= f.label :details %>
       <%= f.text_area :details, :size => "5x10" %>
+
+      <%= f.label "Facebook Event Link" %>
+      <%= f.text_field :fblink %>
+
+      <%= f.label "Link to flyer (jpg, png, gif)" %>
+      <%= f.text_field :flyerlink %>
+
+      <%= f.label "Link to somewhere else" %>
+      <%= f.text_field :altlink %>
 
       <%= f.submit "save changes", :class => "btn btn-large btn-primary" %>
     <% end %>

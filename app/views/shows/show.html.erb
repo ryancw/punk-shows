@@ -1,28 +1,46 @@
 <% provide(:title, @show.title_link) %>
 <div class="row">
-  <aside class="span3">
+  <aside class="span4">
     <section>
       <h4>
-        <%= @show.acts %>
+        <% @showz = @show.acts.scan(/(?:\(.*?\)|[^,])+/) %>
+        <% for sh in @showz %>
+          <%= sh.delete('(').delete(')') %> <br />
+        <% end %>
       </h4>
-      <h3>@<%= @show.location %> </h3>
+      <h3><%= @show.location %> </h3>
       <h3><%= @show.date.strftime('%b') %> <%= @show.date.day %>, <%= @show.date.year %> </h3>
     </section>
-    <section>
+    
       <% if current_user?(@show.user) || current_user?(5) %>
+      <section>
         <%= link_to "edit", edit_show_path(@show) %>
         //
         <%= link_to "delete", @show, method:  :delete,
                                      confirm: "You sure?",
                                      title:   @show.content %>
+      </section>
       <% end %>
+    <% if @show.fblink != '' || @show.altlink != '' %>
+    <section>
+      <% if @show.fblink != '' %>
+      <a href=<%= @show.fblink %>>Facebook Event</a> <br />
+      <% end %>
+      <a href=<%= @show.altlink %>><%= @show.altlink %></a>
+    </section>
+    <% end %>
+    <section>
+      <%= simple_format(@show.details) %>
+    </section>
+    <section>
+      Link to this page:
+      ctshows.org/shows/<%= @show.id %>
     </section>
   </aside>
-  <div class="span9">
-    
-     <div class="well">
-     <%= simple_format(@show.details) %>
-   </div>
+  <div class="span8">
+    <% if @show.flyerlink != '' %>
+      <img src=<%= @show.flyerlink %>></img>
+    <% end %>
 
   </div>
 </div>
